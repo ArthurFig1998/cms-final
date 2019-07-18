@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+
+    <form onsubmit="return false" id="document-edit">
+      <div class="row">
+
+        <div class="col-xs-12 form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" size="120" max="120" class="form-control" #subject>
+
+          <div class="col-xs-12 form-group msgIpt">
+            <label for="message ">Message</label>
+            <input type="text" size="120" max="255" class="form-control " id="message" #msgText>
+          </div>
+        </div>
+
+        <div class="row btnAlg">
+          <div class="col-xs-12">
+            <button class="btn btn-success" type="submit" (click)="onSendMessage()">Send</button>
+            <button class="btn btn-danger" type="button" (click)="onClear()">Clear</button>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>

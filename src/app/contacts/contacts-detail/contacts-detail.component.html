@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        <h2> {{ contact?.name }}</h2>
+        <div class="pull-left">
+          <img [src]="contact?.imageUrl" [alt]="contact?.name" style="max-height: 100px;">
+        </div>
+        <div class="pull-right btn-toolbar centerbtns">
+          <a class="btn btn-primary" [routerLink]="['edit']">Edit</a>
+          <a class="btn btn-danger" (click)="onDelete()">Delete</a>
+        </div>
+      </div>
+      <div class="panel-body">
+        <span class="heading">Email: {{ contact?.email }}</span>
+        <br>
+        <span class="heading">Phone: {{ contact?.phone }}</span>
+        <br>
+        <div *ngIf="contact?.group">
+          <p style="font-weight: bolder; font-size: 1.3em;">Contact in Team:</p>
+        </div>
+        <div *ngFor="let groupContact of contact?.group">
+          <cms-contact-item class="col-sm-11" [contact]="groupContact"></cms-contact-item>
+        </div>
+        <!-- <span class="heading">{{ contact?.group[0].name }}</span> -->
+      </div>
+    </div>
+  </div>
+</div>
