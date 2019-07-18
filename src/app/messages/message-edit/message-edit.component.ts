@@ -38,7 +38,7 @@ export class MessageEditComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log("Current Sender is: " + this.currentSender);
+    console.log("Current Sender is: " + this.currentSender.name);
   }
 
   onSendMessage() {
@@ -51,7 +51,6 @@ export class MessageEditComponent implements OnInit {
       this.currentSender
     );
     this.messageService.addMessage(newMessage);
-    console.log("Current Sender is: " + this.currentSender);
     this.messageService.getMessages();
     this.router.navigate(["/messages"], { relativeTo: this.route });
   }

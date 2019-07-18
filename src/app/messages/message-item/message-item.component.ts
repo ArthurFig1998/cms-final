@@ -20,10 +20,12 @@ export class MessageItemComponent implements OnInit {
     let contact: Contact = this.contactService.getContact(
       this.message.sender.id
     );
-    if (!contact) {
-      console.log("Something went wrong!");
-    } else {
-      this.messageSender = contact;
-    }
+    this.messageSender = contact;
+    console.log(this.messageSender);
+    // if (!contact) {
+    //   console.log("Something went wrong!");
+    // } else {
+    //   this.messageSender = contact;
+    // }
   }
 }

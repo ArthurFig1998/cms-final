@@ -3,15 +3,13 @@ var Schema = mongoose.Schema;
 
 var schema = new Schema({
   id: {
-    type: String,
-    required: true
+    type: String
   },
   name: {
     type: String
   },
   email: {
-    type: String,
-    required: true
+    type: String
   },
   phone: {
     type: String

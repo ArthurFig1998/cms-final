@@ -48,10 +48,12 @@ router.post('/', (req, res, next) => {
   const contact = new Contact({
     id: maxContactId,
     name: req.body.name,
-    description: req.body.description,
-    url: req.body.url,
-    group: req.body.group
+    email: req.body.email,
+    phone: req.body.phone,
+    imageUrl: req.body.imageUrl
   });
+
+  // group: req.body.group
 
   if (contact.group && contact.group.length > 0) {
     for (let groupContact of contact.group) {

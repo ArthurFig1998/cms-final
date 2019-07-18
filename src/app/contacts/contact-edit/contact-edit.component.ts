@@ -12,7 +12,7 @@ import { DataStorageService } from "src/app/shared/data-storage.service";
 })
 export class ContactEditComponent implements OnInit {
   originalContact: Contact;
-  contact: Contact = null;
+  contact: Contact;
   groupContacts: Contact[] = [];
   editMode: boolean = false;
   // hasGroup: boolean = false;
@@ -69,8 +69,8 @@ export class ContactEditComponent implements OnInit {
 
     this.editMode = false;
     this.router.navigate(["/contacts"], { relativeTo: this.route });
-
-    this.dataStorage.storeContacts();
+    this.contactService.getContacts();
+    // this.dataStorage.storeContacts();
   }
 
   onCancel() {

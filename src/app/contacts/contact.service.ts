@@ -15,7 +15,7 @@ export class ContactService {
   contactsListClone: Contact[];
   newContactId: number;
 
-  private contacts: Contact[] = [];
+  private contacts: Contact[];
 
   constructor(private http: HttpClient) {
     this.getContacts();
@@ -67,17 +67,6 @@ export class ContactService {
     // const strDocument = JSON.stringify(newDocument);
   }
 
-  getMaxId(): number {
-    this.contacts.forEach((contact: Contact) => {
-      this.currentId = +contact.id;
-      if (this.currentId > this.maxId) {
-        this.maxId = this.currentId;
-      }
-    });
-
-    return this.maxId;
-  }
-
   addContact(newContact: Contact) {
     if (!newContact) {
       return;
@@ -99,7 +88,7 @@ export class ContactService {
       )
       .subscribe(responseData => {
         this.contacts.push(responseData.contact);
-        this.contactChangeEvent.next(this.contacts);
+        this.contactChangeEvent.next(this.contacts.slice());
       });
   }
 
@@ -114,9 +103,6 @@ export class ContactService {
     }
 
     newContact.id = originalContact.id;
-    // this.documents[pos] = newDocument;
-    // this.documentsListClone = this.documents.slice();
-    // this.documentChangeEvent.next(this.documentsListClone);
 
     const headers = new HttpHeaders({
       "Content-Type": "application/json"
@@ -130,7 +116,7 @@ export class ContactService {
       })
       .subscribe((response: Response) => {
         this.contacts[pos] = newContact;
-        this.contactChangeEvent.next(this.contacts);
+        this.contactChangeEvent.next(this.contacts.slice());
       });
   }
 }
