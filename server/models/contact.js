@@ -18,7 +18,7 @@ var schema = new Schema({
     type: String
   },
   group: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'Contact'
   }
 });

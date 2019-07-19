@@ -11,8 +11,6 @@ import { map } from "rxjs/operators";
 })
 export class DocumentsService implements OnInit {
   documentChangeEvent = new Subject<Document[]>();
-
-  // documentSelectedEvent = new EventEmitter<Document>();
   private documents: Document[];
 
   maxDocumentId: number;
@@ -22,7 +20,6 @@ export class DocumentsService implements OnInit {
 
   constructor(private http: HttpClient) {
     this.getDocuments();
-    console.log("this is being called - documents constructor");
   }
 
   getDocuments() {

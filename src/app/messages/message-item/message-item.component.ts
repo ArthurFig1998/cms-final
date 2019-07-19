@@ -21,7 +21,6 @@ export class MessageItemComponent implements OnInit {
       this.message.sender.id
     );
     this.messageSender = contact;
-    console.log(this.messageSender);
     // if (!contact) {
     //   console.log("Something went wrong!");
     // } else {

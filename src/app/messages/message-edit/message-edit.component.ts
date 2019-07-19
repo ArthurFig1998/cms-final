@@ -22,12 +22,12 @@ export class MessageEditComponent implements OnInit {
   @ViewChild("msgText") msgTextInputRef: ElementRef;
 
   currentSender: Contact = new Contact(
-    "5d30b4da9568cc1d64adb9d5",
-    "101",
-    "Arthur Fernandes de Figueiredo",
+    "5d30e4dc39e0952d8cc776b6",
+    "125",
+    "Arthur Fernandes-Defigueiredo",
     "fig16009@byui.edu",
-    "385-482-9732",
-    "url.com",
+    "3854829732",
+    "../../assets/images/ArthurandKristenWeddingDay-13.jpg",
     null
   );
 
@@ -37,9 +37,7 @@ export class MessageEditComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  ngOnInit() {
-    console.log("Current Sender is: " + this.currentSender.name);
-  }
+  ngOnInit() {}
 
   onSendMessage() {
     const newSubject = this.subjectInputRef.nativeElement.value;

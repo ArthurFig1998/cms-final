@@ -18,10 +18,7 @@ export class MessagesService implements OnInit {
     private dataStorage: DataStorageService,
     private http: HttpClient
   ) {
-    // this.messages = this.initMessages();
-    console.log("Im being called - Constructor");
     this.getMessages();
-    // this.initMessages();
   }
 
   ngOnInit() {
